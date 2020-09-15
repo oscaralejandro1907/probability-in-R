@@ -55,7 +55,7 @@ dev.off()
 
 places<-as.data.frame(table(grep("york|london|boston|newport|philadelphia|paris", words$word,value=TRUE)))
 names(places) <- c('Place', 'FrequencyP')
-rp <- places[places$FrequencyP>2,]  #Filter relevant letters
+rp <- places[places$FrequencyP>2,]  #Filter relevant places
 png('barplot_places.png',width = 1366, height = 768,res = 150)
 barplot(rp$FrequencyP, names.arg = rp$Place)
 dev.off()
