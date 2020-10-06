@@ -1,0 +1,6 @@
+
+	Chi-squared test for given probabilities
+
+data:  hist.output$counts
+X-squared = 15.872, df = 11, p-value = 0.1459
+
