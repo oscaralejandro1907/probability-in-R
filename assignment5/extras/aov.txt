@@ -1,3 +1,0 @@
-              Df Sum Sq Mean Sq F value Pr(>F)
-Source         2      8   3.875   0.984  0.374
-Residuals   2997  11802   3.938               
