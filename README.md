@@ -6,5 +6,7 @@ Applied Probabilistic Models. Homework assignments. August-December 2020. Gradua
 2. Analysis of a Book Structure.
 3. Distribution of words in a book.
 4. Aspects of Poisson Distribution.
+5. Aspects of Normal Distribution and Pseudo-random Numbers
+6. Statistical Tests
 
 See in [Modelos probabilistas aplicados (posgrado)](https://elisa.dyndns-web.com/teaching/prob/pisis/).
