@@ -1,0 +1,12 @@
+
+	Pearson's product-moment correlation
+
+data:  as.numeric(pri) and as.numeric(sec)
+t = 10.528, df = 328, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.4172422 0.5791088
+sample estimates:
+      cor 
+0.5025669 
+
