@@ -1,0 +1,7 @@
+
+	Pearson's Chi-squared test
+
+data:  data_trimmed
+X-squared = 9.0381, df = 22, p-value = 0.9931
+
+Critical Value:  33.92444
