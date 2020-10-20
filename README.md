@@ -4,7 +4,7 @@ Applied Probabilistic Models. Homework assignments. August-December 2020. Gradua
 
 1. Data Analysis of Growth Domestic Product Category (INEGI).
 2. Analysis of a Book Structure.
-3. Distribution of words in a book.
+3. Words Distribution in a book.
 4. Aspects of Poisson Distribution.
 5. Aspects of Normal Distribution and Pseudo-random Numbers
 6. Statistical Tests
