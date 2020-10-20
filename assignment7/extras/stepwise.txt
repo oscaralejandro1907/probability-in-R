@@ -1,0 +1,14 @@
+Subset selection object
+4 Variables  (and intercept)
+   Forced in Forced out
+x1     FALSE      FALSE
+x2     FALSE      FALSE
+x3     FALSE      FALSE
+x4     FALSE      FALSE
+1 subsets of each size up to 2
+Selection Algorithm: backward
+         x1  x2  x3  x4 
+1  ( 1 ) "*" " " " " " "
+2  ( 1 ) "*" "*" " " " "
+(Intercept)          x1          x2 
+  -27.09467    43.49111    26.48317 
