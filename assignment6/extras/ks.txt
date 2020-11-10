@@ -1,7 +1,0 @@
-
-	Two-sample Kolmogorov-Smirnov test
-
-data:  as.numeric(pri) and as.numeric(sec)
-D = 0.26061, p-value = 3.695e-10
-alternative hypothesis: two-sided
-
