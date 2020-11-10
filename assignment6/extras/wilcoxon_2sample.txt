@@ -1,7 +1,0 @@
-
-	Wilcoxon rank sum test with continuity correction
-
-data:  as.numeric(pri) and as.numeric(sec)
-W = 47533, p-value = 0.9976
-alternative hypothesis: true location shift is greater than 0
-
