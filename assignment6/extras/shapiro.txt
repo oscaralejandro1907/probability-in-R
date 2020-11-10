@@ -1,6 +1,0 @@
-
-	Shapiro-Wilk normality test
-
-data:  as.numeric(pri)
-W = 0.94082, p-value = 3.294e-10
-
