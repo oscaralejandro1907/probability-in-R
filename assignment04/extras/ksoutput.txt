@@ -1,0 +1,7 @@
+
+	Two-sample Kolmogorov-Smirnov test
+
+data:  lchar and poi
+D^- = 0.05436, p-value < 2.2e-16
+alternative hypothesis: the CDF of x lies below that of y
+
