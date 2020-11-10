@@ -1,0 +1,8 @@
+
+    lambda      W Shapiro.p.value
+428  0.675 0.9584        0.003112
+
+if (lambda >  0){TRANS = x ^ lambda} 
+if (lambda == 0){TRANS = log(x)} 
+if (lambda <  0){TRANS = -1 * x ^ lambda} 
+
