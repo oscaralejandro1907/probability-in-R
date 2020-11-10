@@ -11,5 +11,6 @@ Applied Probabilistic Models. Homework assignments. August-December 2020. Gradua
 7. Curve Fitting.
 8. Bayes' Theorem.
 9. Expected Value and Variance.
+10. Monte Carlo Simulations.
 
 See in [Modelos probabilistas aplicados (posgrado)](https://elisa.dyndns-web.com/teaching/prob/pisis/).
