@@ -102,7 +102,7 @@
 \maketitle
 
 \section{Introduction}
- 	For this work aspects of multivariate probability densities and distribution are discussed. To begin with, a convolution of distribution example is performed, in the area of finance, specifically in stock prices of two companies. As a second point, a Chi-squared test is performed for two categorical variables in the analysis of the results of my thesis work \citep{hernandez2020study}. Finally, a numerical covariance analysis is performed, in order to prove two properties of this statistical value, also with prices on the stock market between two other enterprises.
+ 	For this work aspects of multivariate probability densities and distribution are discussed. To begin with, a convolution of distribution example is performed, in the area of finance, specifically in stock prices of two companies. As a second point, a Chi-Squared test is performed for two categorical variables in the analysis of the results of my thesis work \citep{hernandez2020study}. Finally, a numerical covariance analysis is performed, in order to prove two properties of this statistical value, also with prices on the stock market between two other enterprises.
  	
  	For the analysis, the R software is used in its version 4.0.2 \citep{r}, and the code used is available on the GitHub repository \citep{github}. This work is run on a MacBook Air with an Intel Core i5 CPU $ @ $ 1.8 GHz and 8 GB RAM.
 
@@ -144,13 +144,13 @@
 
 \section{Chi-Squared Test}
 
-The Chi-Square Test of independence tests whether there is a relationship between two or more categorical variables  \citep{soetewey2020}.  Categorical or nominal data refers that one uses labels instead of numbers; for example race and gender are categorical variables. The central tendency of categorical variables is given by its mode, since median and mean can only be computed on numerical data. Therefore, it does not follow a normal bell-curve distribution, and cannot be analyzed with tests based on a normal distribution such as the $t$-test or ANOVA. The hypotheses are:
+The Chi-Square test of independence tests whether there is a relationship between two or more categorical variables  \citep{soetewey2020}.  Categorical or nominal data refers that one uses labels instead of numbers; for example race and gender are categorical variables. The central tendency of categorical variables is given by its mode, since median and mean can only be computed on numerical data. Therefore, it does not follow a normal bell-curve distribution, and cannot be analyzed with tests based on a normal distribution such as the $t$-test or ANOVA. The hypotheses are:
 \begin{itemize}
 	\item $H_{0}$: The variables are independent there is no relationship between the two categorical variables. Knowing the value of one variable does not help to predict the value of the other variable.
 	\item $H_{1}$: The variables are dependent, there is a relationship between the two categorical variables. Knowing the value of one variable helps to predict the value of the other variable.
 \end{itemize}
 
-To perform the test, data are taken from the results of my thesis work. For this example,\textit{Dataset} and \textit{Optimal} are the two categorical variables which are the ones to be analyzed. Figure \ref{fig:pies} shows how instances performed with these variables. Besides, a contingency table analysis is performed, which is shown below. The hypothesis to be tested is that Dataset and Optimal are not associated with one another. The $p$-value is $1.33 \times 10^{-7}$, which is less than the significance level of 0.05, so the null hypothesis is rejected, and the conclusion from this hypothesis test is that the dataset and optimal values are not independent, therefore are associated somehow. Finally, the last contingency table contains the expected values which would be true the null hypothesis.
+To perform the test, data are taken from the results of my thesis work. For this example,\textit{Dataset} and \textit{Optimal} are the two categorical variables which are the ones to be analyzed. Figure \ref{fig:pies} shows how instances performed with these variables. Besides, a contingency table analysis is performed, which is shown below. The hypothesis to be tested is that \textit{Dataset} and \textit{Optimal} are not associated with one another. The $p$-value is $1.33 \times 10^{-7}$, which is less than the significance level of 0.05, so the null hypothesis is rejected, and the conclusion from this hypothesis test is that the \textit{Dataset} and \textit{Optimal} values are not independent, therefore are associated somehow. Finally, the last contingency table contains the expected values which would be true the null hypothesis.
 		 \begin{figure}
 			\centering
 			\begin{subfigure}[b]{0.475\textwidth}
@@ -195,11 +195,11 @@ For the experiments, data of the adjusted close price of the stock market are do
 
 The first proof is that $\mbox{Cov}[aX+b, cY+d] = ac\mbox{Cov}[X,Y]$. For this experiment coefficients $a$, $b$, $c$, $d$ of different distributions are generated 30 times each, in order to have a certain grade of diversity. In all the iterations results were the same. The used code is shown below:
 
-\lstinputlisting[language=R, firstline=8, lastline=22]{covariance.R}
+\lstinputlisting[language=R, firstline=8, lastline=22]{code/covariance.R}
 
 The second proof is that $\mbox{Var}[X+Y] = \mbox{Var}[X] + \mbox{Var}[Y] + 2\mbox{Cov}[X,Y]$. For this experiment, the mentioned variances of the adjusted close prices are calculated, and then the values of both sides of the equation are compared. The result is confirmed with a value of 968.83. The used code is shown below:
 
-\lstinputlisting[language=R, firstline=25, lastline=27]{covariance.R}
+\lstinputlisting[language=R, firstline=25, lastline=27]{code/covariance.R}
 
 			
 \clearpage
