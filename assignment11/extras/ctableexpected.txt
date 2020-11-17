@@ -1,0 +1,4 @@
+	Contingency Table of Values which H0 would be true  
+             A        B
+  No  34.66667 69.33333
+  Yes 29.33333 58.66667
