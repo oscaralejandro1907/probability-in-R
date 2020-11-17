@@ -1,0 +1,4 @@
+	Contingency Table of Dataset and Optimal Solutions     
+          A     B
+  No  0.163 0.837
+  Yes 0.534 0.466
