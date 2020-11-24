@@ -1,0 +1,309 @@
+\documentclass[10pt,leter,openany]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{siunitx}
+%\usepackage{subfigure}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage{mwe}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage[shortlabels]{enumitem}   %To enumerate with letters
+\usepackage{mathtools}	%To write derivates
+\usepackage[thinc]{esdiff}	%To write derivates
+\usepackage{cancel} %To cancel terms in equations
+
+\usepackage{relsize}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	firstnumber=01,                	 % start line enumeration with line 1000
+	frame=single,	                 % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	language=Python,                 % the language of the code
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},     % string literal style
+	tabsize=2,	                     % sets default tabsize to 2 spaces
+	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+
+\usepackage{fancyvrb}
+
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}data.txt},
+	labelposition=topline,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+
+
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+	\posttitle{%
+		\par\end{center}
+	\begin{center}\large#1\end{center}
+	\vskip0.5em}%
+}
+
+
+\author{5273}
+\title{Homework Assignment 12: Applied Probabilistic Models}
+\subtitle{Generating Functions}
+\date{}
+
+
+\begin{document}
+	
+\maketitle
+
+\section{Exercises}
+	
+	Exercises solved in this work are provided in the book \citet{grinstead2012introduction}. 
+	
+	\subsection{Generating Functions for Discrete Densities}
+	
+	For these exercises generating functions for discrete densities are discussed. These exercises are related to branching processes
+	
+	\subsubsection{Exercise 1 page 392}
+	
+			The exercise describes a branching process. Let $h(z)$ be the ordinary generating function for the $p_{i}$: 							\begin{equation}
+					h(z) = p_{0} + p_{1}z + p_{2}z^{2} + \cdot \cdot \cdot .
+			\end{equation} By Theorem 10.2 in \citet{grinstead2012introduction}, if the mean number $m$ of offspring produced by a single parent is $\leq$ 1, then $d = 1$ and the process dies out with probability 1. If $m > 1$ then $d < 1 $ and the process dies out with probability $d$.
+	
+			\textbf{(a)} For this case $h'(z)|_{z=1} = m = \dfrac{1}{4} + \dfrac{1}{2}\left( 1\right) = \dfrac{3}{4}$. Since $m < 1$, then $d = 1$.
+
+			\textbf{(b)} For this case $h'(z)|_{z=1} = m = \dfrac{1}{3} + \dfrac{2}{3}\left( 1\right) = 1$. Since $m = 1$, then $d=1$.
+
+	
+			\textbf{(c)} For this case $h'(z)|_{z=1} = m = \dfrac{4}{3}$. Since $m>1$, then the process dies out with probability $d$. To find this value, the exercise states that at most two offspring can be produced, therefore the condition $z = h(z)$ yields the equation \begin{equation}
+			d = p_{0} + p_{1}d + p_{2}d^{2},
+			\end{equation} which is satified by $ d = 1 $ and $ d = p_{0}/ p_{2}$. Thus, in addition to the root $d=1$, this second 	root  $d = \dfrac{1}{2}$, and represents the probability that  the process will die out.
+
+			\textbf{(d)} For this case $h'(z)|_{z=1} = m = \mathlarger\sum_{j=0}^{\infty} \left( \dfrac{n}{2^{n+1}}\right)$. In looks like $m \rightarrow 1$ as it is added up to $\infty$ offspring, then $d = 1$.
+
+			\textbf{(e)} For this case $h'(z)|_{z=1} = m = \mathlarger\sum_{j=0}^{\infty}  \dfrac{j}{3} \left( \dfrac{2}{3}\right) ^{j}$. This sumation is greater than 1 then, $m > 1$. To calculate $d$ if notice this geometric series has the form $ \dfrac{1}{3-2z}$, then the condition $z = h(z)$ yields the equation \begin{equation*}
+				\begin{aligned}
+				(3-2z)z & = 1,\\
+				2z^{2}- 3z + 1& = 0.
+			\end{aligned}
+			\end{equation*} which is satified by $ d = 1 $ and $ d = \dfrac{1}{2}$. 
+		
+		\textbf{(f)} To estimate $d$ numerically it is used R software \citep{r}, with the following code:
+		\lstinputlisting[language=R, firstline=6, lastline=18]{branching.R}
+		
+		This experiment estimates a value of $d \approx 0.2032$.
+			
+						\begin{flushright}
+							$\blacksquare $ 
+						\end{flushright}
+					
+		\subsubsection{Exercise 3 page 392}
+		
+			In the chain letter problem the expected number of letters we send is $ m = p_{1} + 2p_{2}$ and the expected payoff is equal to $-100 + 50(m+m^{12})$. The expected profit is asked to be calculated.
+			
+			\textbf{Case a:}
+			
+			If $p_{0} = \dfrac{1}{2}, p_{1} = 0, \mbox{and } p_{2}=\dfrac{1}{2}$; then $m = 0+ 2\left( \dfrac{1}{2}\right) = 1$. Therefore: \begin{equation*}
+				\mathbb{E}(\mbox{Profit}) = -100 + 50(1+1^{12}) = 0.
+			\end{equation*}
+			
+			\textbf{Case b:}
+			
+			If $p_{0} = \dfrac{1}{6}, p_{1} = \dfrac{1}{2}, \mbox{and } p_{2}=\dfrac{1}{3}$; then $m = \dfrac{1}{2}+ 2\left( \dfrac{1}{3}\right) = \dfrac{7}{6}$. Therefore: \begin{equation*}
+				\mathbb{E}(\mbox{Profit}) = -100 + 50\left[ \dfrac{7}{6}+\left( \dfrac{7}{6}\right) ^{12}\right]  = 276.26.
+			\end{equation*}
+		
+		
+		If $p_{0} > \dfrac{1}{2}$ we canot expect to make a profit because let say $p_{0}=0.51$, then $ p_{1} $ and $ p_{2 }$ are force to take other two values, assume $p_{1}=0.16$, and $p_{2}=0.33$. Therefore: \begin{equation*}
+			\mathbb{E}(\mbox{Profit}) = -100 + 50\left[ 0.49+\left( 0.49\right) ^{12}\right]  = -75.49.
+		\end{equation*}
+
+						\begin{flushright}
+						$\blacksquare $ 
+						\end{flushright}
+					
+		\subsection{Generating Functions for Continuous Densities}
+	
+			For the continuous case, the moment generating function $ g(t) $ for X is defined as: \begin{equation}
+				g(t) = \int_{-\infty}^{\infty}e^{tx} f_{X}(x)  dx.
+			\end{equation}
+		
+		\subsubsection{Exercise 1 page 401}
+			
+			For this exercise let X be a continuous random variable with values in $ \left[ 0, 2\right]  $ and for each case there is a given density function $ f_{X}$.
+			
+			\textbf{Case a:} 	\begin{equation*}
+				\begin{aligned}
+					g(t) & = \int_{0}^{2} \dfrac{1}{2}e^{tx} dx\\
+					& = \dfrac{1}{2}\left[ \dfrac{e^{ tx}}{t}\right]^{2}_{0} = \dfrac{1}{2} \left(    \dfrac{e^{2t-1}}{t} \right) = \dfrac{e ^{2t} -1}{2t}.\\
+				\end{aligned}	
+			\end{equation*}
+		
+		
+			\textbf{Case b:} 	\begin{equation*}
+				\begin{aligned}
+					g(t) & = \int_{0}^{2} \dfrac{1}{2}xe^{tx} dx\\
+					& = \dfrac{1}{2}\left[ \dfrac{(tx-1)e^{ tx}}{t^{2}}\right] ^{2}_{0} = \dfrac{1}{2} \left[    \dfrac{(2t-1)e^{2t}+1}{t^{2}} \right] = \dfrac{(2t-1)e^{2t} +1}{2t^{2}}.\\
+				\end{aligned}	
+			\end{equation*}
+		
+		
+				\textbf{Case c:} 	\begin{equation*}
+				\begin{aligned}
+					g(t) & = \int_{0}^{2} \left( 1- \dfrac{x}{2}\right) e^{tx} dx\\
+					& = \left[ \dfrac{e}{2t^{2}} - \dfrac{(x-2)e^{ tx}}{2t}\right] ^{2}_{0} =  \left[   - \dfrac{(t(x-2)-1)e^{tx}}{2t^{2}} \right] ^{2}_{0} = \dfrac{e^{2t}}{2t^{2}}-\dfrac{2t+1}{2t^{2}} = \dfrac{e^{2t} - 2t - 1}{2t^{2}}.\\
+				\end{aligned}	
+				\end{equation*}
+			
+							\textbf{Case d:} 	\begin{equation*}
+				\begin{aligned}
+					g(t) & = \int_{0}^{2} \left| 1- x\right| e^{tx} dx\\
+					& = \left[ \dfrac{(x-1)(tx-t-1)e^{tx}}{t^{2}| x -1 | } \right] ^{2}_{0} =  \left[  \dfrac{(t-1)e^{2t}}{t^{2}} + \dfrac{2e^{t}}{t^{2}} - \dfrac{t+1}{t^{2}}\right]  = \dfrac{(t-1)e^{2t} + 2e^{t} - t - 1}{t^{2}}.\\
+				\end{aligned}	
+			\end{equation*}
+		
+							\textbf{Case e:} 	\begin{equation*}
+			\begin{aligned}
+				g(t) & = \int_{0}^{2} \dfrac{3}{8}x^{2} e^{tx} dx\\
+				& = \left[ \dfrac{3(t^{2}x^{2}-2tx+2)e^{tx}}{8t^{3} } \right] ^{2}_{0}  = \dfrac{(6t^{2}-6t+3)e^{2t} -3}{4t^{3}}.\\
+			\end{aligned}	
+			\end{equation*}
+		
+		
+		
+					\begin{flushright}
+						$\blacksquare $ 
+					\end{flushright}
+		
+		\subsubsection{Exercise 6 page 402}
+		
+			According to \citet{grinstead2012introduction}, $k_{X} (\tau)$, called the characteristicfunction of $ X $ is the Fourier transform of $f_{X}$, and has an inverse given by \begin{equation}
+				f_{X}(x)  = \dfrac{1}{2\pi}\int_{-\infty}^{\infty} e^{-i\tau x} k_{X}(\tau)d\tau. 
+			\end{equation}
+		
+			Therefore:
+			
+				\begin{equation*}
+				\begin{aligned}
+					f_{X}(x) & = \dfrac{1}{2\pi}\int_{-\infty}^{\infty}  e^{-i\tau x} e^{-|\tau|} d\tau, \\
+					& =  \dfrac{\frac{ix}{x^{2}+1}+\frac{1}{x^{2}+1}}{ 2\pi} +  \dfrac{\frac{1}{x^{2}+1} - \frac{ix}{x^{2}+1}}{ 2\pi}  \\
+					& = \dfrac{1}{\pi (x^{2} + 1) }
+				\end{aligned}	
+			\end{equation*}
+		
+						\begin{flushright}
+							$\blacksquare $ 
+						\end{flushright}
+					
+		\subsubsection{Exercise 10 page 403}
+		
+		\textbf{(a)}
+			\begin{equation*}
+				\begin{aligned}
+				\mathbb{E}(X)  & = \int_{-\infty}^{\infty}x\dfrac{e^{-|x|}}{2} dx \\
+				& = \dfrac{1}{2}\int_{-\infty}^{\infty}  \dfrac{x}{|x|} e^{-|x|} |x| dx\\
+				& = - \dfrac{e^{-|x|} |x|}{2} - \dfrac{e^{-|x|}}{2}\\
+				& = \left[ \dfrac{e^{-|x|} (-|x|-1)}{2}\right] _{-\infty}^{\infty}\\
+				& = 0.
+			\end{aligned}	
+			\end{equation*}
+		
+		
+		\begin{equation*}
+			\begin{aligned}
+				\mathbb{V}(X)  & = \int_{-\infty}^{\infty}x^{2}\dfrac{e^{-|x|}}{2} dx \\
+				& = \dfrac{1}{2}\int_{-\infty}^{\infty} x^{2} e^{-|x|} dx\\
+				& = \dfrac{1}{2} \left( \dfrac{x}{|x|}\right)  \int_{-\infty}^{\infty} x^{2} e^{-|x|} \dfrac{|x|}{x} dx\\
+				& = \dfrac{1}{2} \left( \dfrac{x}{|x|}\right)  \int_{-\infty}^{\infty} x e^{-|x|} |x|\\
+				& = \dfrac{1}{2}\left[   \dfrac{x(-2e^{-|x|}|x| - x^{2}e^{-|x|} - 2e^{-|x|}       )}{|x|}      \right] \\
+				& = - \left[ \dfrac{xe^{-|x|}|x| ( 2|x| - x^{2} +2      )}{2|x|} \right]_{-\infty}^{\infty}\\
+				& = 2.
+			\end{aligned}	
+		\end{equation*}
+
+\textbf{(b)} Let $X_{1}$ be a trial process. The moment generating function would be \begin{equation*}
+	\begin{aligned}
+		g(t) & = \mathbb{E}(e^{tx}) \\
+		& = \int_{-\infty}^{\infty} e^{tx}   \left[ \dfrac{e^{-|x|}}{2} \right] dx \\
+		& = \dfrac{1}{2}\left[ \int_{-\infty}^{0}e^{xt+x} dx + \int_{0}^{\infty}e^{xt-x}dx \right] \\
+		& = \dfrac{1}{2} \left[ \left[     \dfrac{e^{x(t+1)}}{t+1} \right]_{-\infty}^{0} -  \left[   \dfrac{e^{x(1-t)}}{1-t}     \right]_{0}^{\infty}     \right] \\
+		& = \dfrac{1}{2} \left[   \dfrac{1}{t+1} + \dfrac{1}{1-t}    \right] \\
+		& = \dfrac{1}{2} \left[   \dfrac{2}{1-t^{2}}  \right] \\
+		& = \dfrac{1}{1-t^{2}}.
+	\end{aligned}	
+\end{equation*}
+
+If $S_{n}$ is $X_{1} + X_{2} + ... + X_{n}$, then the moment generating function is given by \begin{equation*}
+	\begin{aligned}
+	\left[ g(t)\right] ^{n} & =  \left( \dfrac{1}{1-t^{2}}\right) ^{n}\\
+	& = \dfrac{1}{(1-t^{2})^{n}}.
+	\end{aligned}
+\end{equation*}
+
+Then, if $S_{n}^{*} = \dfrac{(S_{n}-n\mu)}{\sqrt{n\sigma^{2}}}   $, the moment generating function is given by \begin{equation*}
+	\begin{aligned}
+		\left[ g\left(   \dfrac{t}{\sqrt{n}}\right) \right] ^{n} & =  \left( \dfrac{1}{1-t^{2}}\right) ^{n}\\
+		& = \left[ \dfrac{1}{\left[ 1- \left( \frac{t}{\sqrt{n}}\right) ^{2}\right] } \right]^{n}\\
+		& = \dfrac{1}{\left[ 1- \left( \frac{t}{\sqrt{n}}\right) ^{2}\right]^{n} }
+	\end{aligned}
+\end{equation*}
+
+\textbf{(c)} According to the obtained expression of  $S_{n}^{*} $ as $ n $ $\rightarrow$ $\infty$ then the expression may reduce to $\dfrac{1}{1^{n}}$. When the limit is calculated it is equal to 1.
+
+				\begin{flushright}
+				$\blacksquare $ 
+			\end{flushright}
+		
+\clearpage
+
+	\bibliography{as12}
+	\bibliographystyle{plainnat}
+	
+\end{document}
