@@ -10,8 +10,8 @@ E_xy <- numeric()
 Ex_Ey <- numeric()
 
 for (i in 1:10000){
-  x <- sample(2:12,size = 10000,replace = TRUE, prob = table(outer(1:6,1:6,"+")) / 36)
-  y <- sample(-5:5,size = 10000,replace = TRUE, prob = table(outer(1:6,1:6,"-")) / 36)
+  x <- sample(2:12,size = 36,replace = TRUE, prob = table(outer(1:6,1:6,"+")) / 36)
+  y <- sample(-5:5,size = 36,replace = TRUE, prob = table(outer(1:6,1:6,"-")) / 36)
 
   E_xy <- c(E_xy,mean(x*y))
   Ex_Ey <- c(Ex_Ey,mean(x)*mean(y))

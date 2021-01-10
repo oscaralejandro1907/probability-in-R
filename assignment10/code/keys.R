@@ -12,7 +12,7 @@ tryKeySim <- function (n=1){
 }
 
 res<-numeric()
-for (i in 1:10000) {
+for (i in 1:120) {
   res <- c(res,tryKeySim(1))
 }
 
