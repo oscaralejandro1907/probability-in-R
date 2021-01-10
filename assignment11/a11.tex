@@ -201,6 +201,29 @@ The second proof is that $\mbox{Var}[X+Y] = \mbox{Var}[X] + \mbox{Var}[Y] + 2\mb
 
 \lstinputlisting[language=R, firstline=25, lastline=27]{code/covariance.R}
 
+To prove that $\mbox{Cov}[aX+b, cY+d] = ac\mbox{Cov}[X,Y]$, by definition \citep{grinstead2012introduction} and with parameters a, b, c, and d holding constants:
+
+\begin{equation*}
+	\begin{aligned}
+\mbox{Cov}[a X + b, c Y + d] &= \mathbb{E}[(aX+b)(cY+d)] - \mathbb{E}[a X + b] \mathbb{E}[c Y + d]\\
+&= \mathbb{E}[ac XY + ad   X + bc   Y + bd] - (a \mathbb{E}[X] + b)(c \mathbb{E}[Y] + d)\\
+&= ac   \mathbb{E}[XY] + ad   \mathbb{E}[X] + bc    \mathbb{E}[Y] + bd - ac   \mathbb{E}[X] \mathbb{E}[Y] - ad   \mathbb{E}[X] - bc   \mathbb{E}[Y] - bd\\
+&= ac(\mathbb{E}[XY] - \mathbb{E}[X] \mathbb{E}[Y])\\
+&= ac   \mbox{Cov}[X, Y].
+	\end{aligned}	
+\end{equation*}
+
+To prove that $\mbox{Var}[X+Y] = \mbox{Var}[X] + \mbox{Var}[Y] + 2\mbox{Cov}[X,Y]$:
+
+\begin{equation*}
+	\begin{aligned}
+		\mbox{Var}[X+Y] &= \mathbb{E}{(X+Y)^2} - \mathbb{E}[X+Y]^2 \\
+		&= \mathbb{E}[X^2 + 2 X Y + Y^2] - (\mathbb{E}[X] + \mathbb{E}[Y] )^2 \\
+		&= \mathbb{E}[X^2] + 2 \mathbb{E}[XY] + \mathbb{E}[Y^2]  - \mathbb{E}[X]^2 - 2 \mathbb{E}[X] \mathbb{E}[Y]  - \mathbb{E}[Y]^2 \\
+		&= \mbox{Var}[X] + \mbox{Var}[Y] + 2( \mathbb{E}{XY} - \mathbb{E}{X} \mathbb{E}[Y] ) \\
+		&= \mbox{Var}[X] + \mbox{Var}[Y] + 2 \mbox{Cov}[X, Y]	.
+	\end{aligned}	
+\end{equation*}
 			
 \clearpage
 
