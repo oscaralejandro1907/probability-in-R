@@ -177,7 +177,7 @@
 			\end{center}
 		\end{figure}
 
-		Figure \ref{eq:2} represents the same model diagnosis, but after performing the Box-Cox transformation with the previously calculated parameter, $\lambda$=0.263. Here main changes can be appreciated in the ``$QQ$ Plot, which shows a better approximation to the normal line.
+		Figure \ref{eq:2} represents the same model diagnosis, but after performing the Box-Cox transformation with the previously calculated parameter, $\lambda$=0.263. Here main changes can be appreciated in the ``Quantile-Quantile" Plot, which shows a better approximation to the normal line.
 
 		\begin{figure}
 		\begin{center}
@@ -206,11 +206,11 @@
 		
 		\subsection{Tukey's Ladder of Power}
 		
-		\citet{tukey1977exploratory} describes an orderly way of re-expressing variables using a power transformation suggesting exploring simple relationships such as $ y^{\lambda} = b_{0} + b_{1}X $ where $\lambda$ is a parameter chosen to make the relationship as close to a straight line as possible. Table \ref{tab:ladders} show examples of the Tukey's ladder of transformations.
+		\citet{tukey1977exploratory} describes an orderly way of re-expressing variables using a power transformation suggesting exploring simple relationships such as $ y^{\lambda} = b_{0} + b_{1}X $ where $\lambda$ is a parameter chosen to make the relationship as close to a straight line as possible. Table \ref{tab:ladders} shows examples of the Tukey's ladder of transformations.
 		
 			\VerbatimInput{extras/tukey.txt}
 			
-			In the above output corresponding to the \texttt{transformTukey()} function of R, applied to Function \ref{eq:2} it shows the value of $\lambda$which data could be transformed, which is $\lambda = 0.675$ and the transformation should be $x^\lambda$. Figure \ref{fig:tukey} shows a histogram of the transformation.
+			In the above output corresponding to the \texttt{transformTukey()} function of R, applied to Function \ref{eq:2} it shows the value of $\lambda$ which data could be transformed, which is $\lambda = 0.675$ and the transformation should be $x^\lambda$. Figure \ref{fig:tukey} shows a histogram of the transformation.
 			
 			\begin{figure}
 				\begin{center}
@@ -246,10 +246,6 @@
 		
 		\VerbatimInput{extras/stepwise.txt}
 		
-		
-			
-		% Please add the following required packages to your document preamble:
-		% \usepackage{booktabs}
 		\begin{table}[]
 			\centering
 			\caption{Resulting Models from the two methods for Function \ref{eq:5}}
