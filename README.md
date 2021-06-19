@@ -15,6 +15,6 @@ Applied Probabilistic Models. Homework assignments. August-December 2020. Gradua
 11.
 12.
 13. Law of Large Numbers
-  Histograms in ggplot2
+  (Histograms in ggplot2
 
 See in [Modelos probabilistas aplicados (posgrado)](https://elisa.dyndns-web.com/teaching/prob/pisis/).
