@@ -12,5 +12,9 @@ Applied Probabilistic Models. Homework assignments. August-December 2020. Gradua
 8. Bayes' Theorem.
 9. Expected Value and Variance.
 10. Monte Carlo Simulations.
+11.
+12.
+13. Law of Large Numbers
+  Histograms in ggplot2
 
 See in [Modelos probabilistas aplicados (posgrado)](https://elisa.dyndns-web.com/teaching/prob/pisis/).
